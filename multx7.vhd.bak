@@ -1,0 +1,16 @@
+library ieee;
+
+use ieee.std_logic_1164.all;
+use ieee.std_logic_signed.all;
+
+entity mult7 is
+  generic( x : integer := 6);
+  port( a : in std_logic_vector(x - 1 downto 0);
+        m : out std_logic_vector(x + x - 1 downto 0)
+  );
+end mult7;
+
+architecture bhv_mult7 of mult7 is
+begin
+  m <= "0000"&(a(x - 1 downto 0)&"00") + ("000000"&a);
+end bhv_mult9;
